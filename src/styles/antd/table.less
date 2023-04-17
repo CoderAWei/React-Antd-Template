@@ -1,0 +1,106 @@
+.ant-table {
+	&-container {
+		.ant-table-content {
+			table {
+
+				// 表格头部区域
+				.ant-table-thead {
+					tr {
+						th {
+							border-top: 1px solid @border-color;
+							border-bottom-color: @border-color;
+							height: 80px;
+							background-color: @white-color;
+							font-weight: bold;
+							font-size: 20px;
+							&::before {
+								display: none;
+							}
+							&:first-child {
+								padding-left: 24px;
+							}
+							&:last-child {
+								padding-right: 24px;
+							}
+							&.ant-table-selection-column {
+								padding-left: 8px;
+							}
+						}
+						&:first-child {
+							th {
+								border-top: none;
+							}
+						}
+					}
+				}
+
+				// 表格内容区域
+				.ant-table-tbody {
+					tr {
+						td {
+							height: 70px;
+							border-color: @border-color;
+							&:first-child {
+								padding-left: 24px;
+							}
+							&:last-child {
+								padding-right: 24px;
+							}
+							&.ant-table-selection-column {
+								padding-left: 8px;
+							}
+							.table-cell-bold-text {
+								font-weight: bold;
+							}
+						}
+						&.ant-table-row-selected > td {
+							background: rgba( @info-color, .08);
+						}
+
+						// 总结栏
+						&.summary-row {
+							color: @info-color;
+							.ant-form-item {
+								color: inherit;
+							}
+							td {
+								border-bottom: 4px solid @info-color;
+							}
+						}
+
+						// 取消hover效果
+						&.ant-table-row:hover > td,
+						& > td.ant-table-cell-row-hover {
+							background: none;
+						}
+					}
+				}
+
+				// 总结栏
+				.ant-table-summary {
+					tr {
+						td {
+							border-bottom: 4px solid @info-color;
+							color: @info-color;
+							font-size: 20px;
+							&:first-child {
+								padding-left: 24px;
+							}
+							&:last-child {
+								padding-right: 24px;
+							}
+						}
+
+						.summary-title {
+							font-weight: bold;
+						}
+
+						.summary-content {
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+	}
+}

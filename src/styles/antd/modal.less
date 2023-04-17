@@ -1,0 +1,77 @@
+// 弹窗相关样式
+.ant-modal.rpas-modal {
+
+	.ant-modal-content {
+		border-radius: 16px;
+
+		// 右上角关闭按钮
+		.ant-modal-close {
+			top: 20px;
+			right: 20px;
+			&-x {
+				width: 24px;
+				height: 24px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				i {
+					display: inline;
+				}
+			}
+		}
+
+		// 头部区域
+		.ant-modal-header {
+			border-bottom: none;
+			padding: 20px 16px 16px;
+			border-radius: 16px 16px 0 0;
+			.ant-modal-title {
+				font-size: 20px;
+				font-weight: bold;
+				line-height: 24px;
+			}
+		}
+
+		// 内容区域
+		.ant-modal-body {
+			padding: 24px 44px;
+
+			.rpas-modal-content {
+				text-align: center;
+
+				.title {
+					font-size: 26px;
+					font-weight: bold;
+					margin-top: 24px;
+				}
+
+				img {
+					margin-bottom: 16px;
+				}
+
+				.bold-text {
+					font-size: 22px;
+					font-family: 'Open Sans Bold';
+				}
+			}
+		}
+
+		// 底部区域
+		.ant-modal-footer {
+			border-top: none;
+			text-align: center;
+			border-radius: 0 0 16px 16px;
+			padding: 0 16px 24px;
+		}
+	}
+
+	// 如果有图标，增大内容区域的上下padding
+	&.rpas-modal-body-large {
+		.ant-modal-content {
+			.ant-modal-body {
+				padding-top: 44px;
+				padding-bottom: 44px;
+			}
+		}
+	}
+}

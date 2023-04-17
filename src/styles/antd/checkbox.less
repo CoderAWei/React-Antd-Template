@@ -1,0 +1,61 @@
+// checkbox相关样式
+.ant-checkbox-wrapper {
+    // display: flex !important;
+    // align-items: center !important;
+    height: 20px;
+
+    span:nth-of-type(2) {
+        margin-top: 6px;
+        line-height: 20px;
+    }
+
+    &:hover {
+        .ant-checkbox-inner {
+            border-color: @input-border-color !important;
+        }
+    }
+  
+    .ant-checkbox-input:focus+.ant-checkbox-inner {
+        border-color: #d9d9d9;
+    }
+  
+    .ant-checkbox {
+        border-radius: 4px;
+
+        &-inner {
+            height: 20px;
+            width: 20px;
+            border-radius: 4px;
+            border-color: @input-border-color;
+
+            &::after {
+            width: 7px;
+            height: 12px;
+            left: 22.5%;
+            border-width: 2px !important;
+            }
+        }
+
+        &-checked {
+            &::after {
+            border: none !important;
+            }
+        }
+
+        &.ant-checkbox-checked .ant-checkbox-inner {
+            background-color: @info-color  !important;
+            border-color: @info-color  !important;
+        }
+    }
+
+    .ant-checkbox-indeterminate {
+        .ant-checkbox-inner {
+            &::after {
+                background: @info-color;
+                left: 50%;
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+}

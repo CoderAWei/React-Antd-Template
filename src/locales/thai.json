@@ -1,0 +1,25 @@
+{
+    "global": {
+        "login": "THAI Login to RPAS",
+        "btn": "主要按钮"
+    },
+	"test": "THAI_This text use to jest",
+    "menu": {
+        "login": "Thai_Login",
+        "homepage": "Thai_Homepage",
+        "example": "Thai_Example",
+        "example2": "Thai_Example2",
+        "nested": "Thai_Nested Page",
+        "nested1": "Thai_Nested Page 1",
+        "nested2": "Thai_Nested Page 2",
+        "nestedInner": "Thai_Nested Nested Page",
+        "nestedInner_1": "Thai_Nested Nested Page 1",
+		"404": "404 Not Found",
+		"fundSwitchReq": "Thai_Fund Switch Request",
+		"submittedReq": "Thai_Submitted Reqest",
+		"waitingList": "Thai_Waiting List",
+		"processingHis": "Thai_Processing History",
+		"fundSwitchEnquiry": "Thai_Fund Switch Enquiry",
+		"fundSwitchOrder": "Thai_Fund Switch Order"
+    }
+}

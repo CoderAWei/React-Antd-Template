@@ -1,0 +1,87 @@
+// 下拉框样式
+.ant-select {
+	width: 100%;
+	height: 56px;
+
+	// 单个select框 高度撑满父元素
+	&.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+		height: 100%;
+	}
+
+	// 让文字垂直居中
+	&.ant-select-single {
+		.ant-select-selector {
+			.ant-select-selection-placeholder,
+			.ant-select-selection-item {
+				line-height: 56px;
+			}
+		}
+	}
+
+	// 后缀icon复位
+	.ant-select-arrow {
+		transition: all .3s;
+		transform: rotate(0deg);
+	}
+
+	&.ant-select-focused.ant-select-open {
+		// 选中时边框变为蓝色
+		.ant-select-selector {
+			box-shadow: none !important;
+			border-color: @info-color !important;
+		}
+
+		// 后缀icon打开时朝上的动画
+		.ant-select-arrow {
+			transition: all .3s;
+			transform: rotate(-180deg);
+		}
+	}
+
+	&.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) {
+		.ant-select-selector {
+			box-shadow: none;
+			border-color: @input-border-color;
+		}
+	}
+
+	// 禁用样式
+	&.ant-select-disabled {
+		&:not(.ant-select-customize-input) {
+			.ant-select-selector {
+				background: #EEEFF0;
+				border-color: @border-color !important;
+			}
+		}
+		.ant-select-arrow {
+			opacity: .3;
+		}
+	}
+
+	// hover的时候去掉边框色
+	&:not(.ant-select-disabled):hover .ant-select-selector {
+		border-color: @input-border-color;
+	}
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+	background-color: rgba(@info-color, .05);
+}
+
+// 下拉框popup的样式
+.rpas-select-dropdown {
+	.rc-virtual-list {
+		&-holder {
+			&-inner {
+				.ant-select-item {
+					padding: 18px 16px;
+					line-height: 24px;
+				}
+				.ant-select-item-option-active:not(.ant-select-item-option-disabled),
+				.ant-select-item-option-selected {
+					background-color: rgba(@info-color, .05);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+.ant-btn {
+    border-radius: 8px;
+    font-weight: 600;
+    height: 48px;
+    min-width: 144px;
+    font-size: 16px;
+    padding: 12px 27px;
+    line-height: 1;
+    letter-spacing: .1px;
+
+    &-sm {
+        height: 32px;
+        padding: 6px 8px;
+        font-size: 14px;
+        min-width: 0;
+    }
+
+    &-lg {
+        height: 56px;
+        min-width: 168px;
+        font-size: 20px;
+        padding: 16px 28px;
+    }
+
+    &-primary {
+        &:hover {
+            background: @btn-hover-color;
+            border-color: @btn-hover-color;
+        }
+
+        &:active {
+            background: @btn-focus-color;
+            border-color: @btn-focus-color;
+			color: @white-color;
+        }
+    }
+
+    &-default {
+        border-color: @primary-color;
+        color: @primary-color;
+
+        &:hover {
+            background: @btn-default-hover-color;
+        }
+
+        &:active {
+            background: @btn-default-focus-color;
+        }
+    }
+
+    &:active {
+        color: @primary-color;
+        border-color: @primary-color;
+		color: @white-color;
+    }
+
+    // 禁用样式
+    &-primary[disabled], &-primary[disabled]:hover, &-primary[disabled]:focus, &-primary[disabled]:active {
+        opacity: .5;
+        background-color: @primary-color;
+        color: white;
+        border-color: @primary-color;
+    }
+    &-default[disabled], &-default[disabled]:hover, &-default[disabled]:focus, &-default[disabled]:active {
+        background: rgba(255, 255, 255, 0.5);
+        opacity: .5;
+        border-color: @primary-color;
+        color: @primary-color;
+    }
+
+    // 按钮里只有icon的情况
+    &.ant-btn-icon-only {
+        min-width: 48px;
+        padding: 0;
+    }
+
+    // 椭圆
+    &.ant-btn-round {
+        height: 48px;
+        border-radius: 48px;
+    }
+    &.ant-btn-sm.ant-btn-round {
+        height: 32px;
+        border-radius: 32px;
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    &.ant-btn-lg.ant-btn-round {
+        height: 56px;
+        border-radius: 56px;
+        padding: 16px 28px;
+    }
+}

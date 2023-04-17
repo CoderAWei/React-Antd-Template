@@ -1,0 +1,25 @@
+{
+    "global": {
+        "login": "login to RPAS",
+        "btn": "Primary Button"
+    },
+	"test": "This text use to jest",
+    "menu": {
+        "login": "Login",
+        "homepage": "Homepage",
+        "example": "Example",
+        "example2": "Example2",
+        "nested": "Nested Page",
+        "nested1": "Nested Page 1",
+        "nested2": "Nested Page 2",
+        "nestedInner": "Nested Nested Page",
+        "nestedInner_1": "Nested Nested Page 1",
+		"404": "404 Not Found",
+		"fundSwitchReq": "Fund Switch Request",
+		"submittedReq": "Submitted Reqest",
+		"waitingList": "Waiting List",
+		"processingHis": "Processing History",
+		"fundSwitchEnquiry": "Fund Switch Enquiry",
+		"fundSwitchOrder": "Fund Switch Order"
+    }
+}
