@@ -1,0 +1,16 @@
+.breadCrumb {
+	display: flex;
+	align-items: center;
+
+	&-item {
+		display: flex;
+		align-items: center;
+		&:not(:last-child) {
+			&::after {
+				display: inline-block;
+				content: '/';
+				margin: 0 12px;
+			}
+		}
+	}
+}
