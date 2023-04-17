@@ -7,7 +7,6 @@ module.exports = {
 			"@": path.resolve(__dirname, "src")
 		}
 	},
-	publicPath: './',
 	plugins: [
 		{
 			plugin: CracoLessPlugin,
