@@ -1,4 +1,4 @@
-# RPAS FE Template
+# React Antd Template
 
 ## 1. Run app
 
