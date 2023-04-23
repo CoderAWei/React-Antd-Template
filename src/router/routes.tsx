@@ -16,13 +16,8 @@ const NestedPage2 = lazy(() => import('@/views/Nested/Nested2'))
 const NestedInner = lazy(() => import('@/views/Nested/NestedInner'))
 const NestedInner_1 = lazy(() => import('@/views/Nested/NestedInner/NestedInner-1'))
 const ErrorPage404 = lazy(() => import('@/views/ErrorPage/404'))
-const FundSwitchRequest = lazy(() => import('@/views/FundSwitchRequest'))
-const SubmittedRequest = lazy(() => import('@/views/FundSwitchRequest/SubmittedRequest'))
-const ProcessingHistory = lazy(() => import('@/views/FundSwitchRequest/ProcessingHistory'))
-const WaitingList = lazy(() => import('@/views/FundSwitchRequest/WaitingList'))
-const FundSwichEnquiry = lazy(() => import('@/views/FundSwitchEnquiry'))
-const FundSwitchOrder = lazy(() => import('@/views/FundSwitchOrder'))
 const ExamplePage2 = lazy(() => import('@/views/ExamplePage2'))
+const HighCharts = lazy(() => import('@/views/HighCharts'))
 
 export const RouterMapAuth: IRouterMap[] = [
 	{
@@ -41,70 +36,27 @@ export const RouterMapAuth: IRouterMap[] = [
 				parentpath: '/'
 			},
 			{
-				path: 'fund-switch-request',
-				auth: 1,
-				title: 'menu.fundSwitchReq',
-				key: 'fund-switch-request',
-				element: <Navigate to={'/fund-switch-request/submitted-request'} />,
-				parentpath: '/',
-				hidden: true
-			},
-			{
-				path: 'fund-switch-request',
-				auth: 1,
-				title: 'menu.fundSwitchReq',
-				key: 'fund-switch-request',
-				element: loadElement(<FundSwitchRequest />),
-				parentpath: '/',
-				children: [
-					{
-						path: 'submitted-request',
-						auth: 1,
-						title: 'menu.submittedReq',
-						key: 'submitted-request',
-						element: loadElement(<SubmittedRequest />),
-						parentpath: '/fund-switch-request'
-					},
-					{
-						path: 'waiting-list',
-						auth: 1,
-						title: 'menu.waitingList',
-						key: 'waiting-list',
-						element: loadElement(<WaitingList />),
-						parentpath: '/fund-switch-request'
-					},
-					{
-						path: 'processing-history',
-						auth: 1,
-						title: 'menu.processingHis',
-						key: 'processing-history',
-						element: loadElement(<ProcessingHistory />),
-						parentpath: '/fund-switch-request'
-					}
-				]
-			},
-			{
-				path: 'fund-switch-enquiry',
-				auth: 1,
-				title: 'menu.fundSwitchEnquiry',
-				key: 'fund-switch-enquiry',
-				element: loadElement(<FundSwichEnquiry />),
-				parentpath: '/'
-			},
-			{
-				path: 'fund-switch-order',
-				auth: 1,
-				title: 'menu.fundSwitchOrder',
-				key: 'fund-switch-order',
-				element: loadElement(<FundSwitchOrder />),
-				parentpath: '/'
-			},
-			{
 				path: 'example',
 				auth: 1,
 				title: 'menu.example',
 				key: 'example',
 				element: loadElement(<PageA />),
+				parentpath: '/'
+			},
+			{
+				path: 'example2',
+				auth: 1,
+				title: "menu.example2",
+				key: 'example2',
+				element: loadElement(<ExamplePage2 />),
+				parentpath: '/'
+			},
+			{
+				path: 'high-charts',
+				auth: 1,
+				title: "menu.highCharts",
+				key: 'high-charts',
+				element: loadElement(<HighCharts />),
 				parentpath: '/'
 			},
 			{
@@ -168,14 +120,6 @@ export const RouterMapAuth: IRouterMap[] = [
 						]
 					}
 				]
-			},
-			{
-				path: 'example2',
-				auth: 1,
-				title: "menu.example2",
-				key: 'example2',
-				element: loadElement(<ExamplePage2 />),
-				parentpath: '/'
 			}
 		]
 	}

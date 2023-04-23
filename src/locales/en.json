@@ -15,11 +15,6 @@
         "nestedInner": "Nested Nested Page",
         "nestedInner_1": "Nested Nested Page 1",
 		"404": "404 Not Found",
-		"fundSwitchReq": "Fund Switch Request",
-		"submittedReq": "Submitted Reqest",
-		"waitingList": "Waiting List",
-		"processingHis": "Processing History",
-		"fundSwitchEnquiry": "Fund Switch Enquiry",
-		"fundSwitchOrder": "Fund Switch Order"
+		"highCharts": "HighCharts"
     }
 }

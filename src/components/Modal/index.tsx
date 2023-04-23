@@ -44,6 +44,7 @@ export default function RPASModal(props: IModalProps) {
 		<Modal
 			className={`rpas-modal ${props.iconPath ? 'rpas-modal-body-large' : ''}`} // 如果有图标，增大内容区域的上下padding
 			open={props.open}
+			centered
 			onCancel={() => onClose(0)}
 			onOk={() => onClose(1)}
 			maskClosable={false}

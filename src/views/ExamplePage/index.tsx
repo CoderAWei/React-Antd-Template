@@ -27,6 +27,7 @@ export default function PageA() {
 	const [modalVisible2, setModalVisible2] = React.useState<boolean>(false)
 	const [modalVisible3, setModalVisible3] = React.useState<boolean>(false)
 	const [modalVisible4, setModalVisible4] = React.useState<boolean>(false)
+	const [count, setCount] = React.useState(0)
 
 	React.useEffect(() => {
 		return () => {
@@ -136,12 +137,31 @@ export default function PageA() {
 		}, 3000)
 	}
 
+	const handleBtnClick = () => {
+		// handle 1:
+		const nextCount = count + 1
+		setCount(nextCount)
+
+		// console.log('count: ' + count)     // 0
+		// console.log('nextCount: ' + nextCount) // 1
+
+		// handle 2:
+		// setCount(count + 1)
+
+		// handle 3:
+		// setCount((prev) => {
+		// 	const count = prev + 1
+		// 	console.log('count: ' + count)
+		// 	return count
+		// })
+	}
+
 	return (
 		<div>
 			<h1>按钮示例</h1>
 			<Row>
 				<Button type='primary' size='small'>{t('global.btn')}</Button>
-				<Button type='primary'>{t('global.btn')}</Button>
+				<Button type='primary' onClick={handleBtnClick}>点击累加</Button>
 				<Button type='primary' size='large'>{t('global.btn')}</Button>
 				<Button type='primary' disabled>{t('global.btn')}</Button>
 				<Button type="primary" icon={<DownloadOutlined />} />
