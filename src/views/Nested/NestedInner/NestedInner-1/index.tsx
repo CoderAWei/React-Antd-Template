@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import { myContext } from '../..'
+import React from 'react'
+import { useInfo } from '../..'
 
 export default function NestedInner_1() {
-	const contextValue = useContext<any>(myContext)
+	const contextValue = useInfo()
 
 	return (
 		<div>

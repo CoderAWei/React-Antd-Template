@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 const initValue = { name: 'Justice', sex: 'Male' }
@@ -20,3 +20,5 @@ export default function NestedPage() {
 		</div>
 	)
 }
+
+export const useInfo = () => useContext(myContext)
