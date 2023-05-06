@@ -1,13 +1,12 @@
 import React from 'react'
-import { Router } from './router'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { SStorage } from './utils/storage'
-import { RouterMapNoAuth } from '@/router/routes'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { Router } from './router'
+import { SStorage } from './utils/storage'
+import { RouterMapNoAuth } from '@/router/routes'
 
 function App() {
-
 	const { pathname } = useLocation()
 	const navigate = useNavigate()
 	const isLogin = SStorage.getItem('isLogin')
@@ -22,7 +21,7 @@ function App() {
 		window.scrollTo(0, 0)
 
 		// 已登录的页面不能往登录页面跳转
-		RouterMapNoAuth.forEach(item => {
+		RouterMapNoAuth.forEach((item) => {
 			if (item.path === pathname && isLogin) {
 				navigate('homepage')
 			}

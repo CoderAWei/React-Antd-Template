@@ -9,33 +9,35 @@ interface IModalProps extends ModalFuncProps {
 	needFooterBtn?: boolean, // 是否渲染底部按钮
 	showCancelBtn?: boolean, // 是否展示cancel按钮
 	showOkBtn?: boolean, // 是否展示ok按钮
+	cancelText?: string, // 取消按钮文字
+	okText?: string, // 确认按钮文字
 }
 
 RPASModal.defaultProps = {
 	needFooterBtn: true,
 	showCancelBtn: true,
 	showOkBtn: true,
+	iconPath: require('@/assets/icons/icon_warning.png'),
 	cancelText: 'Cancel',
 	okText: 'Ok'
 }
 
 export default function RPASModal(props: IModalProps) {
-
 	const onClose = (type: number) => {
 		props.handleModalVisible(type)
 	}
 
-	const CloseIcon = () => {
+	function CloseIcon() {
 		return (
-			<img src={require('@/assets/icons/icon_close.png')} alt="close" width={'24px'} />
+			<img src={require('@/assets/icons/icon_close.png')} alt="close" width="24px" />
 		)
 	}
 
-	const FooterButtons = () => {
+	function FooterButtons() {
 		return (
-			<div className='rpas-modal-footer'>
+			<div className="rpas-modal-footer">
 				{props.showCancelBtn && <Button onClick={() => onClose(0)} {...props.cancelButtonProps}>{props.cancelText}</Button>}
-				{props.showOkBtn && <Button type='primary' onClick={() => onClose(1)} {...props.okButtonProps}>{props.okText}</Button>}
+				{props.showOkBtn && <Button type="primary" onClick={() => onClose(1)} {...props.okButtonProps}>{props.okText}</Button>}
 			</div>
 		)
 	}
@@ -49,13 +51,13 @@ export default function RPASModal(props: IModalProps) {
 			onOk={() => onClose(1)}
 			maskClosable={false}
 			closeIcon={<CloseIcon />}
-			footer={props.needFooterBtn ? <FooterButtons /> : null }
+			footer={props.needFooterBtn ? <FooterButtons /> : null}
 			{...props}
 		>
-			<div className='rpas-modal-content'>
+			<div className="rpas-modal-content">
 				{
-					props.iconPath &&
-					<img className='rpas-modal-content-icon' src={props.iconPath} alt="content-icon" width={'108px'} />
+					props.iconPath
+					&& <img className="rpas-modal-content-icon" src={props.iconPath} alt="content-icon" width="108px" />
 				}
 				{
 					props.children

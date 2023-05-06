@@ -12,7 +12,7 @@ export default function NestedPage() {
 		<div>
 			<Button onClick={() => navigate('/nested/nested1')}>Go to nested1</Button>
 			<Button onClick={() => navigate('/nested/nested2')}>Go to nested2</Button>
-			<div className=''>
+			<div className="">
 				<myContext.Provider value={initValue}>
 					<Outlet />
 				</myContext.Provider>

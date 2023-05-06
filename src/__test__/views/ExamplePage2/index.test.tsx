@@ -1,17 +1,14 @@
-import ExamplePage2 from '@/views/ExamplePage2'
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { useTranslation } from 'react-i18next'
+import React from 'react'
+import ExamplePage2 from '@/views/ExamplePage2'
 
-jest.mock('react-i18next', () => {
-	return {
-		useTranslation: () => {
-			return {
-				t: key => key
-			}
-		}
-	}
-})
+jest.mock('react-i18next', () => ({
+	useTranslation: () => ({
+		t: (key) => key
+	})
+}))
 
 describe('Example page2 testing...', () => {
 	const { t } = useTranslation()

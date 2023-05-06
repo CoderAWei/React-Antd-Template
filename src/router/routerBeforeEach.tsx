@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from '@/components/Layout'
-import { useAuth } from '@/hooks/useAuth'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { RouterMapAuth } from './routes'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import Layout from '@/components/Layout'
+import { useAuth } from '@/hooks/useAuth'
+import { RouterMapAuth } from './routes'
 import { IChildRouterMap } from '@/types'
 
 export default function RouterBeforeEach() {
@@ -24,14 +24,12 @@ export default function RouterBeforeEach() {
 	}
 
 	React.useEffect(() => {
-		handleRouteTitle(RouterMapAuth[0].children?.filter(item => !item.hidden))
+		handleRouteTitle(RouterMapAuth[0].children?.filter((item) => !item.hidden))
 		if (!isLogin) {
 			navigate('/login')
-		} else {
-			// not login
-			if (pathname === '/') {
-				navigate('/homepage')
-			}
+		}
+		if (pathname === '/') {
+			navigate('/homepage')
 		}
 	}, [pathname, lang])
 

@@ -1,11 +1,15 @@
+import React, { lazy, ReactNode, Suspense } from 'react'
+import { Navigate } from 'react-router-dom'
 import RouterBeforeEach from '@/router/routerBeforeEach'
 import { IRouterMap } from '@/types'
-import { lazy, ReactNode, Suspense } from 'react'
-import { Navigate } from 'react-router-dom'
 
-const loadElement = (element: ReactNode): ReactNode => {
-	return <Suspense fallback={null}> {element} </Suspense>
-}
+const loadElement = (element: ReactNode): ReactNode => (
+	<Suspense fallback={null}>
+		{' '}
+		{element}
+		{' '}
+	</Suspense>
+)
 
 const Homepage = lazy(() => import('@/views/Homepage'))
 const Login = lazy(() => import('@/views/Login'))
@@ -14,7 +18,7 @@ const NestedPage = lazy(() => import('@/views/Nested'))
 const NestedPage1 = lazy(() => import('@/views/Nested/Nested1'))
 const NestedPage2 = lazy(() => import('@/views/Nested/Nested2'))
 const NestedInner = lazy(() => import('@/views/Nested/NestedInner'))
-const NestedInner_1 = lazy(() => import('@/views/Nested/NestedInner/NestedInner-1'))
+const NestedInner1 = lazy(() => import('@/views/Nested/NestedInner/NestedInner-1'))
 const ErrorPage404 = lazy(() => import('@/views/ErrorPage/404'))
 const ExamplePage2 = lazy(() => import('@/views/ExamplePage2'))
 const HighCharts = lazy(() => import('@/views/HighCharts'))
@@ -46,7 +50,7 @@ export const RouterMapAuth: IRouterMap[] = [
 			{
 				path: 'example2',
 				auth: 1,
-				title: "menu.example2",
+				title: 'menu.example2',
 				key: 'example2',
 				element: loadElement(<ExamplePage2 />),
 				parentpath: '/'
@@ -54,7 +58,7 @@ export const RouterMapAuth: IRouterMap[] = [
 			{
 				path: 'high-charts',
 				auth: 1,
-				title: "menu.highCharts",
+				title: 'menu.highCharts',
 				key: 'high-charts',
 				element: loadElement(<HighCharts />),
 				parentpath: '/'
@@ -62,16 +66,16 @@ export const RouterMapAuth: IRouterMap[] = [
 			{
 				path: 'nested',
 				auth: 1,
-				title: "menu.nested",
+				title: 'menu.nested',
 				key: 'nested',
-				element: <Navigate to='/nested/nested1' replace={true} />,
+				element: <Navigate to="/nested/nested1" replace />,
 				parentpath: '/',
 				hidden: true
 			},
 			{
 				path: 'nested',
 				auth: 1,
-				title: "menu.nested",
+				title: 'menu.nested',
 				key: 'nested',
 				element: loadElement(<NestedPage />),
 				parentpath: '/',
@@ -79,7 +83,7 @@ export const RouterMapAuth: IRouterMap[] = [
 					{
 						path: 'nested1',
 						auth: 1,
-						title: "menu.nested1",
+						title: 'menu.nested1',
 						key: 'nested1',
 						element: loadElement(<NestedPage1 />),
 						parentpath: '/nested'
@@ -87,7 +91,7 @@ export const RouterMapAuth: IRouterMap[] = [
 					{
 						path: 'nested2',
 						auth: 1,
-						title: "menu.nested2",
+						title: 'menu.nested2',
 						key: 'nested2',
 						element: loadElement(<NestedPage2 />),
 						parentpath: '/nested'
@@ -95,16 +99,16 @@ export const RouterMapAuth: IRouterMap[] = [
 					{
 						path: 'nestedInner',
 						auth: 1,
-						title: "menu.nestedInner",
+						title: 'menu.nestedInner',
 						key: 'nestedInner1',
-						element: <Navigate to={'/nested/nested1/nestedInner_1'} replace={true} />,
+						element: <Navigate to="/nested/nested1/nestedInner_1" replace />,
 						parentpath: '/nested',
 						hidden: true
 					},
 					{
 						path: 'nestedInner',
 						auth: 1,
-						title: "menu.nestedInner",
+						title: 'menu.nestedInner',
 						key: 'nestedInner',
 						element: loadElement(<NestedInner />),
 						parentpath: '/nested',
@@ -112,9 +116,9 @@ export const RouterMapAuth: IRouterMap[] = [
 							{
 								path: 'nestedInner_1',
 								auth: 1,
-								title: "menu.nestedInner_1",
+								title: 'menu.nestedInner_1',
 								key: 'nestedInner_1',
-								element: loadElement(<NestedInner_1 />),
+								element: loadElement(<NestedInner1 />),
 								parentpath: '/nested/nestedInner'
 							}
 						]

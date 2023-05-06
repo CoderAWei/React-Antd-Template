@@ -1,14 +1,13 @@
 import { Menu, MenuProps } from 'antd'
 import React, { useState } from 'react'
-import { RouterMapAuth } from '@/router/routes'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { SStorage } from '@/utils/storage'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { SStorage } from '@/utils/storage'
+import { RouterMapAuth } from '@/router/routes'
 import { IChildRouterMap } from '@/types'
 
 export default function RPASMenu() {
-
 	const navigate = useNavigate()
 	const { pathname } = useLocation()
 	const [selectedKeys, setSelectedKeys] = useState<string>('')
@@ -19,7 +18,7 @@ export default function RPASMenu() {
 
 	React.useEffect(() => {
 		// 菜单文字的处理
-		const items = RouterMapAuth[0].children?.filter(item => !item.hidden)
+		const items = RouterMapAuth[0].children?.filter((item) => !item.hidden)
 		handleMenuLabel(items as IChildRouterMap[])
 	}, [lang])
 

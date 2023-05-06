@@ -1,16 +1,15 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/hooks/useAuth'
 import Header from './Components/Header'
 import style from './index.module.less'
-import { LoginCarousel } from './Components/Carousel'
+import LoginCarousel from './Components/Carousel'
 import Footer from '@/components/Layout/components/Footer'
 // import { useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
 import InputEye from '@/components/SuffixIcon/InputEye'
 
 export default function Login() {
-
 	const [isShowPassword, setIsShowPassword] = React.useState<boolean>(false)
 	const [loginForm] = Form.useForm()
 	const { login } = useAuth()
@@ -35,7 +34,6 @@ export default function Login() {
 		} catch (error) {
 			setLoading(false)
 		}
-
 	}
 
 	const handleEyeClick = async () => {
@@ -44,8 +42,8 @@ export default function Login() {
 
 	return (
 		<>
-			<Header isShowLogout={false}/>
-			<div className={style['login']}>
+			<Header isShowLogout={false} />
+			<div className={style.login}>
 				<div className={`${style['login-banner']}`}>
 					<LoginCarousel />
 				</div>
@@ -61,14 +59,14 @@ export default function Login() {
 							autoComplete="off"
 							layout="vertical"
 							requiredMark={false}
-							className='login-form'
+							className="login-form"
 						>
 							<Form.Item
 								label="Username"
 								name="username"
 								rules={[{ required: true, message: 'Please input your username!' }]}
 							>
-								<Input placeholder='Username' maxLength={15} />
+								<Input placeholder="Username" maxLength={15} />
 							</Form.Item>
 
 							<Form.Item
@@ -78,10 +76,14 @@ export default function Login() {
 								rules={[{ required: true, message: 'Please input your password!' }]}
 							>
 								<Input
-									placeholder='Password'
-									suffix={<InputEye isShowPassword={isShowPassword}
-										handleEyeClick={handleEyeClick}/>}
-									type='custom-password-input'
+									placeholder="Password"
+									suffix={(
+										<InputEye
+											isShowPassword={isShowPassword}
+											handleEyeClick={handleEyeClick}
+										/>
+									)}
+									type="custom-password-input"
 									maxLength={35}
 								/>
 								{/* <Input.Password placeholder='' suffix={<InputEye isShowPassword={isShowPassword} handleEyeClick={handleEyeClick}/>} /> */}
@@ -89,7 +91,7 @@ export default function Login() {
 
 							<Form.Item>
 								<Button type="primary" htmlType="submit" block loading={loading} disabled={!userId || !password}>
-                                Submit
+									Submit
 								</Button>
 							</Form.Item>
 						</Form>

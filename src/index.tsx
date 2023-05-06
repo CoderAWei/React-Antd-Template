@@ -4,14 +4,14 @@ import 'antd/dist/antd.less' // antd默认样式
 import '@/styles/reset.less'
 import '@/styles/antd/antd.less' // 自定义antd的样式
 import '@/styles/index.less' // 自定义全局样式
-import App from './App'
-import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
-import { AuthProvider } from '@/hooks/useAuth'
 import { Provider } from 'react-redux'
-import store from '@/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
+import { AuthProvider } from '@/hooks/useAuth'
+import store from '@/store'
 import '@/locales'
 
 const root = ReactDOM.createRoot(

@@ -1,16 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import HighchartsReact from 'highcharts-react-official'
 import HighCharts from 'highcharts'
 
 export default function HighChartsCom() {
-
 	const chartsRef = useRef<HighchartsReact.RefObject>(null)
-
-	useEffect(() => {
-		if (chartsRef) {
-			console.log(chartsRef.current.chart)
-		}
-	}, [chartsRef])
+	const [lineData, setLineData] = useState<Array<number>>([])
 
 	const options: HighCharts.Options = {
 		title: {
@@ -18,12 +12,19 @@ export default function HighChartsCom() {
 		},
 		series: [{
 			type: 'line',
-			data: [1, 2, 3]
+			data: lineData
 		}],
 		accessibility: {
 			enabled: false // remove warning
 		}
 	}
+
+	useEffect(() => {
+		// 从接口拿数据并赋值
+		setLineData([2, 3, 4, 5, 12])
+		console.log(chartsRef.current.chart)
+	}, [chartsRef])
+
 	return (
 		<div>
 			<HighchartsReact

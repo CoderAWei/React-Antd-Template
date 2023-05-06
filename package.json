@@ -44,8 +44,8 @@
     "build:prod": "dotenv -e .env.production craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:eslint": "eslint --fix --ext .js,.ts,.tsx ./src",
-    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\""
+    "lint": "eslint --fix --ext .js,.ts,.tsx ./src",
+    "prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\""
   },
   "eslintConfig": {
     "extends": [
@@ -69,7 +69,12 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "axios": "^1.3.4",
-    "eslint": "^8.23.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "less": "^4.1.3",
     "less-loader": "^10.2.0",
     "redux-devtools": "^3.7.0"
