@@ -1,37 +1,37 @@
 .ant-btn {
-    border-radius: 8px;
-    font-weight: 600;
-    height: 48px;
-    min-width: 144px;
-    font-size: 16px;
     padding: 12px 27px;
+    min-width: 144px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
     line-height: 1;
     letter-spacing: .1px;
 
     &-sm {
-        height: 32px;
         padding: 6px 8px;
-        font-size: 14px;
         min-width: 0;
+        height: 32px;
+        font-size: 14px;
     }
 
     &-lg {
-        height: 56px;
-        min-width: 168px;
-        font-size: 20px;
         padding: 16px 28px;
+        min-width: 168px;
+        height: 56px;
+        font-size: 20px;
     }
 
     &-primary {
         &:hover {
-            background: @btn-hover-color;
             border-color: @btn-hover-color;
+            background: @btn-hover-color;
         }
 
         &:active {
-            background: @btn-focus-color;
             border-color: @btn-focus-color;
 			color: @white-color;
+            background: @btn-focus-color;
         }
     }
 
@@ -49,29 +49,30 @@
     }
 
     &:active {
-        color: @primary-color;
         border-color: @primary-color;
+        color: @primary-color;
 		color: @white-color;
     }
 
     // 禁用样式
     &-primary[disabled], &-primary[disabled]:hover, &-primary[disabled]:focus, &-primary[disabled]:active {
-        opacity: .5;
-        background-color: @primary-color;
-        color: white;
         border-color: @primary-color;
-    }
-    &-default[disabled], &-default[disabled]:hover, &-default[disabled]:focus, &-default[disabled]:active {
-        background: rgba(255, 255, 255, 0.5);
+        color: white;
+        background-color: @primary-color;
         opacity: .5;
+    }
+
+    &-default[disabled], &-default[disabled]:hover, &-default[disabled]:focus, &-default[disabled]:active {
         border-color: @primary-color;
         color: @primary-color;
+        background: rgb(255 255 255 / 50%);
+        opacity: .5;
     }
 
     // 按钮里只有icon的情况
     &.ant-btn-icon-only {
-        min-width: 48px;
         padding: 0;
+        min-width: 48px;
     }
 
     // 椭圆
@@ -79,15 +80,17 @@
         height: 48px;
         border-radius: 48px;
     }
+
     &.ant-btn-sm.ant-btn-round {
-        height: 32px;
-        border-radius: 32px;
-        font-size: 14px;
         padding: 6px 8px;
+        height: 32px;
+        font-size: 14px;
+        border-radius: 32px;
     }
+
     &.ant-btn-lg.ant-btn-round {
+        padding: 16px 28px;
         height: 56px;
         border-radius: 56px;
-        padding: 16px 28px;
     }
 }

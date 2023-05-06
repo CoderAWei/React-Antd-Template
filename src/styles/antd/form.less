@@ -4,6 +4,7 @@
 
         &-label {
             font-family: 'Open Sans Bold';
+
             label {
                 height: 56px;
             }
@@ -11,28 +12,29 @@
 
         &-control {
             .ant-form-item-explain-error {
-                color: @input-error-color;
                 display: flex;
                 align-items: flex-start;
-				font-size: 14px;
 				margin-top: 4px;
+				font-size: 14px;
+                color: @input-error-color;
 
                 &::before {
-                    content: '';
+                    display: inline-block;
+                    margin-top: 4px;
+                    margin-right: 5px;
+                    width: 17px;
+                    min-width: 17px;
+                    height: 15px;
                     background: url('../../assets/icons/icon_input_warning.png') no-repeat;
                     background-size: cover;
-                    display: inline-block;
-                    min-width: 17px;
-                    width: 17px;
-                    height: 15px;
-                    margin-right: 5px;
-                    margin-top: 4px;
+                    content: '';
                 }
             }
 
             .ant-form-item-control-input {
                 .ant-form-item-control-input-content {
                     height: 56px;
+
                     .ant-input-affix-wrapper-status-error,
                     .ant-input-status-error {
                         border-color: @input-error-color !important;
@@ -66,10 +68,10 @@
 
                     // 普通输入框
                     .ant-input {
-                        box-sizing: border-box;
-                        height: 100%;
                         padding: 16px;
+                        height: 100%;
                         border-color: @input-border-color;
+                        box-sizing: border-box;
 
                         &-disabled {
                             background-color: #EEEFF0;
@@ -92,26 +94,28 @@
 // 单个输入框进行校验出错时样式
 .ant-form-item.ant-form-item-has-error {
     text-align: left;
+
     .ant-form-item-explain-error {
-        color: @input-error-color;
         display: flex;
-        text-align: left;
-        font-size: 14px;
         margin-top: 4px;
+        font-size: 14px;
+        text-align: left;
+        color: @input-error-color;
 
         &::before {
-            content: '';
+            display: inline-block;
+            margin-top: 4px;
+            margin-right: 5px;
+            width: 17px;
+            min-width: 17px;
+            height: 15px;
             background: url('../../assets/icons/icon_input_warning.png') no-repeat;
             background-size: cover;
-            display: inline-block;
-            min-width: 17px;
-            width: 17px;
-            height: 15px;
-            margin-right: 5px;
-            margin-top: 4px;
+            content: '';
         }
     }
-    .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+
+    .ant-input-status-error:not(.ant-input-disabled, .ant-input-borderless).ant-input {
         border-color: @input-error-color;
     }
 }

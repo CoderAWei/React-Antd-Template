@@ -7,25 +7,30 @@
 				.ant-table-thead {
 					tr {
 						th {
+							height: 80px;
+							font-size: 20px;
+							font-weight: bold;
 							border-top: 1px solid @border-color;
 							border-bottom-color: @border-color;
-							height: 80px;
 							background-color: @white-color;
-							font-weight: bold;
-							font-size: 20px;
+
 							&::before {
 								display: none;
 							}
+
 							&:first-child {
 								padding-left: 24px;
 							}
+
 							&:last-child {
 								padding-right: 24px;
 							}
+
 							&.ant-table-selection-column {
 								padding-left: 8px;
 							}
 						}
+
 						&:first-child {
 							th {
 								border-top: none;
@@ -40,29 +45,36 @@
 						td {
 							height: 70px;
 							border-color: @border-color;
+
 							&:first-child {
 								padding-left: 24px;
 							}
+
 							&:last-child {
 								padding-right: 24px;
 							}
+
 							&.ant-table-selection-column {
 								padding-left: 8px;
 							}
+
 							.table-cell-bold-text {
 								font-weight: bold;
 							}
 						}
+
 						&.ant-table-row-selected > td {
-							background: rgba( @info-color, .08);
+							background: rgb( @info-color .08);
 						}
 
 						// 总结栏
 						&.summary-row {
 							color: @info-color;
+
 							.ant-form-item {
 								color: inherit;
 							}
+
 							td {
 								border-bottom: 4px solid @info-color;
 							}
@@ -80,12 +92,14 @@
 				.ant-table-summary {
 					tr {
 						td {
+							font-size: 20px;
 							border-bottom: 4px solid @info-color;
 							color: @info-color;
-							font-size: 20px;
+
 							&:first-child {
 								padding-left: 24px;
 							}
+
 							&:last-child {
 								padding-right: 24px;
 							}

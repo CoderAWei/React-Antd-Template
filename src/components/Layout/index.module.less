@@ -1,25 +1,26 @@
 .layout {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
 
     // 左侧区域
     &-left {
-        height: 100%;
+        display: flex;
         width: 25rem;
         min-width: 250px;
-        background-color: @primary-color;
-        display: flex;
-        flex-direction: column;
+        height: 100%;
         color: @white-color;
+        background-color: @primary-color;
+        flex-direction: column;
 
         &-brand {
-            padding: 0 16px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            padding: 0 16px;
             height: 7.5rem;
 			min-height: 75px;
+
             img {
                 margin-right: 8px;
             }
@@ -33,20 +34,23 @@
         // antd menu 样式覆盖
         :global {
             .ant-menu.ant-menu-inline {
-                background: @primary-color;
-                color: rgba(@white-color, 0.65);
                 border-right: none;
+                color: rgb(@white-color 0.65);
+                background: @primary-color;
 
                 & > .ant-menu-item {
                     width: 100%;
                     height: 6rem;
 					min-height: 60px;
+
                     &:hover {
                         color: @white-color;
                     }
+
                     &::after {
                         border-right: none;
                     }
+
                     &:active {
                         background: #a3052f;
                     }
@@ -56,27 +60,28 @@
             }
 
             .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-                background: #a3052f;
                 color: @white-color;
+                background: #a3052f;
             }
 
             .ant-menu-submenu.ant-menu-submenu-inline {
-
                 .ant-menu-submenu-title {
                     height: 6rem;
 					min-height: 60px;
-                    color: rgba(@white-color, 0.65);
+                    color: rgb(@white-color 0.65);
+
                     &:hover {
                         color: @white-color;
                     }
+
                     &:active {
-                        background-color: transparent;
                         color: @white-color;
+                        background-color: transparent;
                     }
 
                     // 子菜单展开的图标
                     .ant-menu-submenu-arrow {
-                        color: rgba(@white-color, 0.65);
+                        color: rgb(@white-color 0.65);
                     }
                 }
 
@@ -101,17 +106,17 @@
     // 右侧区域
     &-right {
         width: 100%;
-        height:100%;
 		min-width: 900px;
+        height:100%;
 
         // 头部区域
         &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
             height: 8rem;
 			min-height: 80px;
-            padding: 0 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             border-bottom: 1px solid @border-color;
 
             &_right {
@@ -123,14 +128,17 @@
                     display: flex;
                     align-items: center;
                     font-size: 1.4rem;
+
                     div {
-                        cursor: pointer;
-                        height: 100%;
-                        line-height: 2rem;
                         padding: 0 1.2rem;
+                        height: 100%;
+                        cursor: pointer;
+                        line-height: 2rem;
+
                         &:nth-of-type(1) {
                             border-right: 1px solid black;
                         }
+
                         &:hover {
                             color: black;
                         }
@@ -141,34 +149,38 @@
 
         // 内容区域
         &-content {
-            width: 100%;
-            height: 100%;
             overflow: auto;
             padding: 16px;
+            width: 100%;
+            height: 100%;
             background-color: #f4f4f4;
         }
 
         // 页脚
         &-footer {
-            width: 100%;
             padding: 1.8rem 0 2.8rem;
-            background-color: @font-dark-color;
+            width: 100%;
             color: @white-color;
+            background-color: @font-dark-color;
 
             &-content {
+                display: flex;
+                align-items: center;
                 margin: 0 auto;
                 max-width: 120rem;
                 border-bottom: 1px solid @white-color;
-                display: flex;
-                align-items: center;
+
                 &_menu {
                     display: flex;
+
                     &_item {
                         margin-left: 5rem;
+
                         .title {
-                            font-weight: 700;
                             margin-bottom: 1rem;
+                            font-weight: 700;
                         }
+
 						a {
 							color: @white-color;
 						}
@@ -178,8 +190,8 @@
 
             &-bottom {
                 margin: 0 auto;
-                max-width: 120rem;
                 padding-top: 2.4rem;
+                max-width: 120rem;
                 font-size: 12px;
             }
         }
@@ -188,9 +200,11 @@
 			.ant-spin-nested-loading {
 				height: calc(100vh - 8rem);
 				max-height: calc(100vh - 8rem);
+
 				.ant-spin-container {
 					height: 100%;
 				}
+
 				.ant-spin {
 					max-height: 100%;
 				}
@@ -199,7 +213,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width:  1200px) {
     .layout {
         &-header {
             width: 100%;

@@ -27,8 +27,8 @@
 	&.ant-select-focused.ant-select-open {
 		// 选中时边框变为蓝色
 		.ant-select-selector {
-			box-shadow: none !important;
 			border-color: @info-color !important;
+			box-shadow: none !important;
 		}
 
 		// 后缀icon打开时朝上的动画
@@ -40,8 +40,8 @@
 
 	&.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) {
 		.ant-select-selector {
-			box-shadow: none;
 			border-color: @input-border-color;
+			box-shadow: none;
 		}
 	}
 
@@ -49,10 +49,11 @@
 	&.ant-select-disabled {
 		&:not(.ant-select-customize-input) {
 			.ant-select-selector {
-				background: #EEEFF0;
 				border-color: @border-color !important;
+				background: #EEEFF0;
 			}
 		}
+
 		.ant-select-arrow {
 			opacity: .3;
 		}
@@ -65,7 +66,7 @@
 }
 
 .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-	background-color: rgba(@info-color, .05);
+	background-color: rgb(@info-color .05);
 }
 
 // 下拉框popup的样式
@@ -77,9 +78,10 @@
 					padding: 18px 16px;
 					line-height: 24px;
 				}
+
 				.ant-select-item-option-active:not(.ant-select-item-option-disabled),
 				.ant-select-item-option-selected {
-					background-color: rgba(@info-color, .05);
+					background-color: rgb(@info-color .05);
 				}
 			}
 		}

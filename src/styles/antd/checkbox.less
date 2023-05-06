@@ -23,15 +23,15 @@
         border-radius: 4px;
 
         &-inner {
-            height: 20px;
             width: 20px;
-            border-radius: 4px;
+            height: 20px;
             border-color: @input-border-color;
+            border-radius: 4px;
 
             &::after {
+            left: 22.5%;
             width: 7px;
             height: 12px;
-            left: 22.5%;
             border-width: 2px !important;
             }
         }
@@ -43,18 +43,18 @@
         }
 
         &.ant-checkbox-checked .ant-checkbox-inner {
-            background-color: @info-color  !important;
             border-color: @info-color  !important;
+            background-color: @info-color  !important;
         }
     }
 
     .ant-checkbox-indeterminate {
         .ant-checkbox-inner {
             &::after {
-                background: @info-color;
                 left: 50%;
                 width: 8px;
                 height: 8px;
+                background: @info-color;
             }
         }
     }

@@ -2,26 +2,28 @@
     .upload-container {
         width: 328px;
         height: 56px;
-        border-radius: 8px;
         border: 1px solid @border-color;
+        border-radius: 8px;
         background: #f7f7f8;
         cursor: pointer;
+
         .add {
-            height: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            height: 100%;
+
             img {
+                margin-right: 5px;
                 width: 15px;
                 height: 15px;
-                margin-right: 5px;
             }
         }
 
         // 正在上传中的样式
         &.uploading {
             border-color: @info-color;
-            background: rgba(@info-color, .05);
+            background: rgb(@info-color .05);
         }
     }
 

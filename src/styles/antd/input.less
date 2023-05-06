@@ -1,13 +1,14 @@
 .ant-input {
-    height: 56px;
     width: 100%;
+    height: 56px;
 
     &:hover {
         border-color: @input-border-color;
     }
+
     &:focus {
         border-color: @info-color;
+        background: rgb(@info-color .05);
         box-shadow: none;
-        background: rgba(@info-color, .05);
     }
 }

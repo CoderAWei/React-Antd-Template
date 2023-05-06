@@ -5,38 +5,40 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 8rem;
-        width: 100%;
-        font-size: 2rem;
         z-index: 100;
+        width: 100%;
+        height: 8rem;
+        font-size: 2rem;
+
             &-wrap {
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 2.4rem;
             width: 120rem;
             min-width: 120rem;
             height: 100%;
-            padding: 0 2.4rem;
-            margin: 0 auto;
             background-color: white;
-            z-index: 100;
+			box-shadow: 0 3px 7px 0 rgb(0 0 0 / 3%), 0 1px 10px 0 rgb(0 0 0 / 10%);
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: .8rem;
-            display: flex;
-            align-items: center;
-			box-shadow: 0 3px 7px 0 rgb(0 0 0 / 3%), 0 1px 10px 0 rgb(0 0 0 / 10%);
 
             &_menu {
-                height: 100%;
                 display: flex;
                 align-items: center;
-                flex-grow: 1;
                 margin: 0 0 0 2rem;
+                height: 100%;
                 font-size: 14px;
                 font-weight: bold;
+                flex-grow: 1;
             }
 
             // 右侧区域
             &_right {
                 display: flex;
                 align-items: center;
+
                 button:not(:last-child) {
                     margin-right: 1rem;
                 }
@@ -48,13 +50,15 @@
                     font-size: 1.6rem;
                     // height: 2rem;
                     div {
-                        cursor: pointer;
-                        height: 100%;
-                        line-height: 2rem;
                         padding: 0 1.2rem;
+                        height: 100%;
+                        cursor: pointer;
+                        line-height: 2rem;
+
                         &:nth-of-type(1) {
                             border-right: 1px solid black;
                         }
+
                         &:hover {
                             color: black;
                         }
@@ -77,9 +81,9 @@
             &-img {
                 width: 100%;
                 height: 100%;
-                background-size: cover;
-                background-repeat: no-repeat;
                 background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 background-color: #464646;
             }
 
@@ -87,29 +91,29 @@
                 position: absolute;
                 top: 8rem;
                 left: calc((100% - 120rem) / 2);
+                padding: 10rem 0 0;
                 width: 120rem;
                 height: calc(100% - 80rem);
-                padding: 10rem 0 0;
+                font-size: 3rem;
                 // background-color: aqua;
                 color: white;
-                font-size: 3rem;
             }
         }
     }
 
     &-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 7.5rem 0;
         height: auto;
         min-height: 400px;
         font-size: 1.6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
 
         &-title {
-            font-size: 4rem;
             margin-bottom: 2rem;
+            font-size: 4rem;
             font-family: 'AIA Everest Medium';
         }
 
@@ -119,13 +123,13 @@
             :global {
                 .login-form {
                     input[type="custom-password-input"] {
-                        font-family: "asterisk";
+                        font-family: asterisk;
                         // font-size: 10px;
                         font-style: normal;
                         font-weight: normal;
                         // speak: none;
 
-                        /* For safety - reset parent styles, that can break glyph codes*/
+                        /* For safety - reset parent styles, that can break glyph codes */
                         font-variant: normal;
                         text-transform: none;
 
@@ -136,6 +140,7 @@
                         -moz-text-security: disc;
                         -o-text-security: disc;
                     }
+
                     .password-area.remove-cypher {
                         input[type="custom-password-input"] {
                             -webkit-text-security: none;
