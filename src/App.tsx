@@ -13,8 +13,6 @@ function App() {
 	const { t } = useTranslation()
 	const { lang } = useSelector((state: any) => state.language)
 
-	console.log(`REACT_APP_TEST: ${process.env.REACT_APP_TEST}`)
-
 	React.useEffect(() => {
 		// console.log(`----page ${pathname} enter----`)
 		// each page go to top

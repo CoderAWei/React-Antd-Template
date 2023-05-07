@@ -20,6 +20,8 @@ const root = ReactDOM.createRoot(
 
 const persistor = persistStore(store)
 
+console.log(`You are running this application in %c${process.env.NODE_ENV} %cmode.`, 'color: green;font-weight: bold;font-size: 16px', 'color: black')
+
 root.render(
 	// <React.StrictMode>
 	<Provider store={store}>
