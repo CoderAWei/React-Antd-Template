@@ -94,11 +94,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
