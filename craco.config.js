@@ -1,10 +1,22 @@
 const CracoLessPlugin = require('craco-less')
-const path = require("path")
+const path = require('path')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
 	webpack: {
 		alias: {
-			"@": path.resolve(__dirname, "src")
+			'@': path.resolve(__dirname, 'src')
+		},
+		plugins: {
+			add: [
+				new CompressionPlugin({
+					test: /\.(js|css|less)?$/i, // 哪些文件要压缩
+					filename: '[path][base].gz', // 压缩后的文件名
+					algorithm: 'gzip', // 使用gzip压缩
+					minRatio: 0.8, // 压缩率小于1才会压缩
+					deleteOriginalAssets: false // 删除未压缩的文件，谨慎设置，如果希望提供非gzip的资源，可不设置或者设置为false
+				})
+			]
 		}
 	},
 	plugins: [
