@@ -1,3 +1,4 @@
-const a = 1
+import qs from 'qs'
 
-export default a
+export const getUrlSearchParams = (): Object => qs.parse(window.location.search, { ignoreQueryPrefix: true })
+
