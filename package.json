@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.0.0",
+    "react-inject-env": "^2.1.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -42,8 +43,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=5005 && craco start",
-    "build:dev": "dotenv -e .env.development craco build",
+    "start": "set PORT=5005 && npx react-inject-env set && craco start",
+    "build:dev": "set REACT_APP_BASE_URL=http://aia-dev.aiaazure.biz/rest&& set REACT_APP_TEST=dev&&  npx react-inject-env set && dotenv -e .env.development craco build",
     "build:sit": "dotenv -e .env.sit craco build",
     "build:uat": "dotenv -e .env.uat craco build",
     "build:prod": "dotenv -e .env.production craco build",

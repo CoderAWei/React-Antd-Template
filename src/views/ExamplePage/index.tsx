@@ -6,6 +6,7 @@ import { DownloadOutlined } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import type { ColumnsType } from 'antd/es/table'
 import { useDispatch } from 'react-redux'
+import { env } from '@/env'
 import RPASModal from '@/components/Modal'
 import SelectArrow from '@/components/SuffixIcon/SelectArrow'
 import { toogleLoading } from '@/store/features/loadingSlice'
@@ -31,10 +32,13 @@ export default function PageA() {
 	const [modalVisible4, setModalVisible4] = React.useState<boolean>(false)
 	const [count, setCount] = React.useState(0)
 
-	React.useEffect(() => () => {
-		console.log('清楚Example页面的定时器')
-		clearTimeout(timer)
-		clearTimeout(timer2)
+	React.useEffect(() => {
+		console.log(env.REACT_APP_BASE_URL)
+		return () => {
+			console.log('清楚Example页面的定时器')
+			clearTimeout(timer)
+			clearTimeout(timer2)
+		}
 	}, [])
 
 	const dataSource: DataType[] = [
