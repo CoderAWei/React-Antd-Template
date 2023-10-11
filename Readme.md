@@ -26,3 +26,4 @@
 ### 1. 'dotenv' 不是内部或外部命令，也不是可运行的程序或批处理文件
 
 run  ``npm install dotenv-cli --save-dev``
+pt_key=AAJlJgUCADCYTDIR2Kes-iZ5utEHGTPHFLQcSjMuP7QIodE8jNyxLjk7iAMXD0abC0YxKs616gk; pt_pin=jd_73e825b70d4b6;
